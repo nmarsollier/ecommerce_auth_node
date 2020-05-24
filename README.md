@@ -24,17 +24,13 @@ Seguir los pasos de instalación del sitio oficial [nodejs.org](https://nodejs.o
 
 La base de datos se almacena en MongoDb.
 
-Ver tutorial de instalación en [README.md](../README.md) en la raíz.
-
-Tambien se puede instalar usando docker, ver notas en [ecommerce](https://github.com/nmarsollier/ecommerce)
+Ver tutorial de instalación en [ecommerce](https://github.com/nmarsollier/ecommerce).
 
 ### RabbitMQ
 
 Este microservicio notifica los logouts de usuarios con Rabbit.
 
-Ver tutorial de instalación en [README.md](../README.md) en la raíz.
-
-Tambien se puede instalar usando docker, ver notas en [ecommerce](https://github.com/nmarsollier/ecommerce)
+Ver tutorial de instalación en [ecommerce](https://github.com/nmarsollier/ecommerce).
 
 ## Ejecución
 
@@ -60,7 +56,7 @@ Este archivo permite configurar diversas opciones de la app, ver ejemplos en .en
 
 ## Docker
 
-Para crear el contenedor docker de este repositorio ejecutamos :
+Tambien podemos usar docker en este repositorio, ejecutamos :
 
 ```bash
 docker build -t ecommerce-auth-node .
