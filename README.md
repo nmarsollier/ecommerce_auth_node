@@ -63,17 +63,17 @@ Este archivo permite configurar diversas opciones de la app, ver ejemplos en .en
 Para crear el contenedor docker de este repositorio ejecutamos :
 
 ```bash
-docker build -t auth-node .
-docker run -d --name auth-node --network host auth-node
+docker build -t ecommerce-auth-node .
+docker run -d --name ecommerce-auth-node --network host ecommerce-auth-node
 ```
 
 El contenedor se puede parar usando :
 
 ```bash
-docker stop auth-node
+docker stop ecommerce-auth-node
 ```
 Se vuelve a levantar usando 
 
 ```bash
-docker start auth-node 
+docker start ecommerce-auth-node 
 ```
