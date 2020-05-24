@@ -59,17 +59,17 @@ Este archivo permite configurar diversas opciones de la app, ver ejemplos en .en
 Tambien podemos usar docker en este repositorio, ejecutamos :
 
 ```bash
-docker build -t ecommerce-auth-node .
-docker run -d --name ecommerce-auth-node --network host ecommerce-auth-node
+docker build -t dev-auth-node .
+docker run -d --name dev-auth-node --network host dev-auth-node
 ```
 
 El contenedor se puede parar usando :
 
 ```bash
-docker stop ecommerce-auth-node
+docker stop dev-auth-node
 ```
 Se vuelve a levantar usando 
 
 ```bash
-docker start ecommerce-auth-node 
+docker start dev-auth-node 
 ```
