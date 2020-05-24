@@ -1,0 +1,6 @@
+.DS_Store
+package-lock.json
+.vscode
+.gradle
+node_modules
+dist
