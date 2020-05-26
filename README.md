@@ -59,7 +59,7 @@ Este archivo permite configurar diversas opciones de la app, ver ejemplos en .en
 Tambien podemos usar docker en este repositorio, ejecutamos :
 
 ```bash
-docker build -t dev-auth-node .
+docker build -t dev-auth-node -f Dockerfile.dev .
 docker run -d --name dev-auth-node --network host dev-auth-node
 ```
 

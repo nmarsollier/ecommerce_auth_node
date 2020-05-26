@@ -1,0 +1,11 @@
+# Docker para desarrollo
+FROM node:14.3.0
+
+COPY . /app
+WORKDIR /app
+RUN npm install
+
+# Puerto auth service
+EXPOSE 3000
+
+CMD ["npm","start"]
