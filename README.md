@@ -49,9 +49,17 @@ El microservicio muestra la documentación como archivos estáticos si se abre e
 
 Ademas se genera la documentación en formato markdown.
 
-## Archivo .env
+## Configuración de la app
 
-Este archivo permite configurar diversas opciones de la app, ver ejemplos en .env.example
+Esta aplicacion se configura con variables de entorno del sistema operativo
+
+SERVER_PORT : Puerto de la app (3000)
+LOG_LEVEL : Nivel de log (debug)
+MONGO_URL : Url de mongo (mongodb://localhost/authentication)
+JWT_SECRET : JWT  (+b59WQF+kUDr0TGxevzpRV3ixMvyIQuD1O)
+PASSWORD_SALT : Para JWT (DP3whK1fL7kKvhWm6pZomM/y8tZ92mkEBtj29A4M+b8)
+RABBIT_URL : Servidor rabbit (amqp://localhost)
+
 
 ## Docker
 
