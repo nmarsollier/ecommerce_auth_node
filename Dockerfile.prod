@@ -9,7 +9,7 @@ RUN npm run build
 # Puerto de Auth Service
 EXPOSE 3000
 
-ENV MONGODB mongodb://host.docker.internal/authentication
+ENV MONGO_URL mongodb://host.docker.internal/authentication
 ENV RABBIT_URL amqp://host.docker.internal
 
 CMD ["npm","run", "serve"]
