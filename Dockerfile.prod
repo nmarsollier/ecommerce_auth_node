@@ -6,8 +6,10 @@ RUN curl -L https://github.com/nmarsollier/ecommerce_auth_node/tarball/master | 
 RUN npm install --silent
 RUN npm run build
 
-# Puerto de Auth Service 
+# Puerto de Auth Service
 EXPOSE 3000
 
-CMD ["npm","run", "serve"]
+ENV MONGODB mongodb://host.docker.internal/authentication
+ENV RABBIT_URL amqp://host.docker.internal
 
+CMD ["npm","run", "serve"]

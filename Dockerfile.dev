@@ -5,6 +5,9 @@ COPY . /app
 WORKDIR /app
 RUN npm install
 
+ENV MONGODB mongodb://host.docker.internal/authentication
+ENV RABBIT_URL amqp://host.docker.internal
+
 # Puerto auth service
 EXPOSE 3000
 

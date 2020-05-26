@@ -53,14 +53,13 @@ Ademas se genera la documentación en formato markdown.
 
 Este archivo permite configurar diversas opciones de la app, ver ejemplos en .env.example
 
-
 ## Docker
 
-Tambien podemos usar docker en este repositorio, ejecutamos :
+También podemos usar docker en este repositorio, ejecutamos :
 
 ```bash
 docker build -t dev-auth-node -f Dockerfile.dev .
-docker run -d --name dev-auth-node --network host dev-auth-node
+docker run -d --name dev-auth-node -p 3000:3000 dev-auth-node
 ```
 
 El contenedor se puede parar usando :
@@ -68,8 +67,9 @@ El contenedor se puede parar usando :
 ```bash
 docker stop dev-auth-node
 ```
-Se vuelve a levantar usando 
+
+Se vuelve a levantar usando
 
 ```bash
-docker start dev-auth-node 
+docker start dev-auth-node
 ```
