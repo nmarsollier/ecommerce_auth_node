@@ -61,29 +61,18 @@ JWT_SECRET : JWT  (+b59WQF+kUDr0TGxevzpRV3ixMvyIQuD1O)
 PASSWORD_SALT : Para JWT (DP3whK1fL7kKvhWm6pZomM/y8tZ92mkEBtj29A4M+b8)
 RABBIT_URL : Servidor rabbit (amqp://localhost)
 
-
-## Docker
-
-También podemos usar docker en este repositorio, ejecutamos :
+### Build
 
 ```bash
-docker build -t dev-auth-node -f Dockerfile.dev .
+docker build --no-cache -t dev-auth-node .
+```
 
-# Mac || Windows
-docker run -d --name dev-auth-node -p 3000:3000 dev-auth-node
+### El contenedor
+
+```bash
+# Mac | Windows
+docker run -it --name dev-auth-node -p 3000:3000 -v $PWD:/app dev-auth-node
 
 # Linux
-docker run --add-host host.docker.internal:172.17.0.1 -d --name dev-auth-node -p 3000:3000 dev-auth-node
-```
-
-El contenedor se puede parar usando :
-
-```bash
-docker stop dev-auth-node
-```
-
-Se vuelve a levantar usando
-
-```bash
-docker start dev-auth-node
+docker run -it --add-host host.docker.internal:172.17.0.1 --name dev-auth-node -p 3000:3000 -v $PWD:/app dev-auth-node
 ```
