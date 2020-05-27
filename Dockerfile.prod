@@ -12,4 +12,4 @@ EXPOSE 3000
 ENV MONGO_URL mongodb://host.docker.internal/authentication
 ENV RABBIT_URL amqp://host.docker.internal
 
-CMD ["npm","run", "serve"]
+CMD cd dist; node server.js
