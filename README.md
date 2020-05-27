@@ -67,7 +67,12 @@ También podemos usar docker en este repositorio, ejecutamos :
 
 ```bash
 docker build -t dev-auth-node -f Dockerfile.dev .
+
+# Mac || Windows
 docker run -d --name dev-auth-node -p 3000:3000 dev-auth-node
+
+# Linux
+docker run --add-host host.docker.internal:172.17.0.1 -d --name dev-auth-node -p 3000:3000 dev-auth-node
 ```
 
 El contenedor se puede parar usando :
