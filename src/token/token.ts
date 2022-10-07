@@ -8,20 +8,20 @@ Son tokens de sesión se guardan en la base de datos.
 Para deshabilitar un token hay que poner valida=false
 */
 export interface IToken extends Document {
-  valid: boolean;
+  isValid: boolean;
   user: ObjectID;
 }
 
 const TokenSchema = new Schema({
-  valid: {
+  isValid: {
     type: Boolean,
     default: true,
-    required: "Valid es requerido"
+    required: [true, "Valid es requerido"]
   },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: "Usuario es requerido"
+    required: [true, "Usuario es requerido"]
   }
 }, { collection: "tokens" });
 

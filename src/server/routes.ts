@@ -85,11 +85,14 @@ function changePassword(req: ISessionRequest, res: express.Response) {
  * @apiUse OtherErrors
  */
 async function signUp(req: express.Request, res: express.Response) {
+  console.log("signUp");
   try {
     const userId = await user.register(req.body);
     const tokenString = await token.create(userId);
     res.json({ token: tokenString });
   } catch (err) {
+    console.log(err);
+
     error.handle(res, err);
   }
 }

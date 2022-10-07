@@ -12,6 +12,7 @@ import * as token from "../token";
 import * as error from "../server/error";
 import { Config } from "./environment";
 import * as routes from "./routes";
+const session = require("express-session");
 
 export function init(appConfig: Config): express.Express {
   const app = express();
@@ -37,6 +38,11 @@ export function init(appConfig: Config): express.Express {
   app.use(compression());
 
   // Configuramos passport, authentication por tokens y db
+  app.use(session({
+    secret: "mysecret",
+    resave: true,
+    saveUninitialized: true
+  }));
   app.use(passport.initialize());
   app.use(passport.session());
 

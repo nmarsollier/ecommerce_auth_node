@@ -29,18 +29,18 @@ const UserSchema = new Schema({
     type: String,
     trim: true,
     default: "",
-    required: "El nombre de usuario es requerido"
+    required: [true, "El nombre de usuario es requerido"]
   },
   login: {
     type: String,
-    unique: "El login ya existe",
-    required: "El login es requerido",
-    trim: true
+    trim: true,
+    unique: true,
+    required: [true, "El login es requerido"]
   },
   password: {
     type: String,
     default: "",
-    required: "La contraseña es requerida"
+    required: [true, "La contraseña es requerida"]
   },
   permissions: {
     type: [

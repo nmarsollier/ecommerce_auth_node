@@ -13,7 +13,7 @@ export async function create(userId: string): Promise<string> {
     try {
         const token: IToken = new Token();
         token.user = mongoose.Types.ObjectId.createFromHexString(userId);
-        token.valid = true;
+        token.isValid = true;
 
         const t = await token.save();
 
@@ -30,7 +30,7 @@ export async function invalidate(payload: passport.Payload): Promise<void> {
         if (!token) {
             throw error.newError(error.ERROR_NOT_FOUND, "Token invalido.");
         }
-        token.valid = false;
+        token.isValid = false;
         token = await token.save();
         return Promise.resolve();
     } catch (err) {
