@@ -1,9 +1,8 @@
 "use strict";
 
-import * as env from "../server/environment";
-import * as error from "../server/error";
+import * as env from "../../server/environment";
+import * as error from "../../server/error";
 import { IUser, User } from "./user";
-import { resolve } from "path";
 
 const conf = env.getConfig(process.env);
 

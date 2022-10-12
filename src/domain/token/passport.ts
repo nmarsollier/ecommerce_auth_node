@@ -1,16 +1,20 @@
 "use strict";
 
+import * as express from "express";
 import * as jwt from "jsonwebtoken";
 import * as nodeCache from "node-cache";
 import * as passport from "passport";
 import { ExtractJwt, Strategy } from "passport-jwt";
-import * as appConfig from "../server/environment";
+import * as appConfig from "../../server/environment";
 import { IToken, Token } from "./token";
-import { ObjectID } from "bson";
 
 export interface Payload {
     token_id: string;
     user_id: string;
+}
+
+export interface ISessionRequest extends express.Request {
+    user: Payload;
 }
 
 // Este cache de sesiones en memoria va a evitar que tenga que ir a la base de datos

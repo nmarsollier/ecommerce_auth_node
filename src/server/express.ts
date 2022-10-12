@@ -8,10 +8,10 @@ import * as helmet from "helmet";
 import * as morgan from "morgan";
 import * as passport from "passport";
 import * as path from "path";
-import * as token from "../token";
+import * as token from "../domain/token";
 import * as error from "../server/error";
 import { Config } from "./environment";
-import * as routes from "./routes";
+import * as routes from "../rest/get_users_current";
 const session = require("express-session");
 
 export function init(appConfig: Config): express.Express {

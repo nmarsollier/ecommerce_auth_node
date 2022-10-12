@@ -4,33 +4,14 @@ import amqp = require("amqplib");
 import * as env from "../server/environment";
 const conf = env.getConfig(process.env);
 
-interface IRabbitMessage {
+export interface IRabbitMessage {
     type: string;
     message: any;
 }
 
 let channel: amqp.Channel;
 
-/**
- * @api {fanout} auth/fanout Invalidar Token
- * @apiGroup RabbitMQ POST
- *
- * @apiDescription AuthService enviá un broadcast a todos los usuarios cuando un token ha sido invalidado. Los clientes deben eliminar de sus caches las sesiones invalidadas.
- *
- * @apiSuccessExample {json} Mensaje
- *     {
- *        "type": "logout",
- *        "message": "{Token revocado}"
- *     }
- */
-export function sendLogout(token: string): Promise<IRabbitMessage> {
-    return sendMessage({
-        type: "logout",
-        message: token
-    });
-}
-
-async function sendMessage(message: IRabbitMessage): Promise<IRabbitMessage> {
+export async function sendMessage(message: IRabbitMessage): Promise<IRabbitMessage> {
     const channel = await getChannel();
     try {
         const exchange = await channel.assertExchange("auth", "fanout", { durable: false });
